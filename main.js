@@ -89,7 +89,7 @@ $(document).ready(function() {
     }
   });
 
-  //--Calculate Wins--//
+  //Calculate Wins//
   function playerMove(arr, player) {
     var winning = [
       ["1", "2", "3"],
@@ -118,9 +118,10 @@ $(document).ready(function() {
     }
   }
   
-  //--restart on play again--//
+  //restart on play again//
     $(".restart").click(function() {
     $("td").text("");
+    $("td").css("border-color", "#1a1a1a");
   currentMove = "";
   currentPlayer = player1;
   allMoves = [];
@@ -139,7 +140,7 @@ $(document).ready(function() {
   
   
   
-  //--if someone wins--//
+  //if someone wins//
   function someWin(player) {
     $(".yourteam").hide();
     $(".nowin-announcement").hide();
@@ -148,23 +149,23 @@ $(document).ready(function() {
     $(".move").hide();
     mover = true;
     winner = true;
-    if (player === "O"){
+    if (player === "o"){
       counterO++;
       counter(counterX, counterO);
-      $("table").css("background-color", "green");
-    } else if (player === "X") {
+      $("td").css("border-color", "green");
+    } else if (player === "x") {
       counterX++;
       counter(counterX, counterO);
-      $("table").css("background-color", "yellow");
+      $("td").css("border-color", "yellow");
     }
   }
 
   
   
-  //--end of game with no win--//
+  //end of game with no win//
   function noWin() {
     if (allMoves.length === 9 && winner === false) {
-      $("table").css("background-color", "red");
+      $("td").css("border-color", "red");
       $(".yourteam").hide();
       $(".winner-announcement").hide();
       $(".nowin-announcement").show();
@@ -174,7 +175,6 @@ $(document).ready(function() {
     }
   }
 
-  //--score counter--//
   function counter(counterX, counterO){
     $(".counter").text("X: " + counterX + " | O: " + counterO);
   }
