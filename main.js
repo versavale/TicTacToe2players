@@ -89,7 +89,7 @@ $(document).ready(function() {
     }
   });
 
-  //Calculate Wins//
+  //--Calculate Wins--//
   function playerMove(arr, player) {
     var winning = [
       ["1", "2", "3"],
@@ -118,9 +118,8 @@ $(document).ready(function() {
     }
   }
   
-  //restart on play again//
+  //--restart on play again--//
     $(".restart").click(function() {
-  //  history.go(0); //this refreshes the browser completely
     $("td").text("");
   currentMove = "";
   currentPlayer = player1;
@@ -140,7 +139,7 @@ $(document).ready(function() {
   
   
   
-  //if someone wins//
+  //--if someone wins--//
   function someWin(player) {
     $(".yourteam").hide();
     $(".nowin-announcement").hide();
@@ -162,7 +161,7 @@ $(document).ready(function() {
 
   
   
-  //end of game with no win//
+  //--end of game with no win--//
   function noWin() {
     if (allMoves.length === 9 && winner === false) {
       $("table").css("background-color", "red");
@@ -175,6 +174,7 @@ $(document).ready(function() {
     }
   }
 
+  //--score counter--//
   function counter(counterX, counterO){
     $(".counter").text("X: " + counterX + " | O: " + counterO);
   }
